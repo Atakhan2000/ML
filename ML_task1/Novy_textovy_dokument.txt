@@ -1,0 +1,24 @@
+class FNV(object):
+    def __init__(self, kernel=None, metric='euclidean'):
+        self.X, self.Y = None, None
+        self.kernel = lambda x: np.ones_like(x)
+        if kernel is not None:
+            self.kernel = kernel
+        self.metric = metric
+    def predict(self, X):
+        features = np.sum(self.Y*self.kernel(cdist(X, self.X, self.metric)), 
+                          axis=-1)
+        return features/(np.sum(self.kernel(cdist(X, self.X, self.metric)),
+                          axis=-1)+1e-10)
+    def fit(self, X, Y, epoch=10):
+        self.X, self.Y = np.array(X), np.array(Y)
+
+
+
+def K(distance, h=0.2):
+    ret = np.array(distance)/h
+    return (1 - ret**2) * (np.abs(ret) <= 1) 
+
+
+           model = FNV(kernel=lambda x: K(x, h=item['h']),
+                        metric=item['metric'])

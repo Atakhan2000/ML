@@ -1,0 +1,11 @@
+Enter your mail: a.alchymbaev@phystech.edu
+{'dataset': {'name': 'Boston Housing Data Set',
+  'url': 'https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html#sklearn.datasets.load_boston'},
+ 'id': 3795091167,
+ 'mail': 'a.alchymbaev@phystech.edu',
+ 'method': ['Надарая-Ватсона', 'Линейная регрессия', 'SVR'],
+ 'type': 'regression'}
+
+---------------------------------------------------------------------
+В этом наборе имеется 506 выборок и 13 переменных характеристик. Цель состоит в том, чтобы спрогнозировать стоимость дома с использованием заданных характеристик.
+
